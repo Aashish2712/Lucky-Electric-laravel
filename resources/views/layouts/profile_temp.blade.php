@@ -1,6 +1,6 @@
 @extends('layouts._main')
 @push('page')
-    Product
+   profile
 @endpush
 @section('main-section')
 
@@ -17,32 +17,32 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="profile.php" class="nav-link active " aria-current="page">
+                    <a href="profile.php" class="nav-link  @stack('menu') " aria-current="page">
 
-                        <img class="mx-1" src="images/profile.svg">
+                        <img class="mx-1" src={{asset('img/website/profile.svg')}}>
                         My profile
                     </a>
                 </li>
 
-                <a href="order.php" class="nav-link link-dark">
+                <a href="/order" class="nav-link  link-dark">
 
-                    <img class="mx-1" src="images/order.svg">
+                    <img class="mx-1" src={{asset('img/website/order.svg')}}>
                     Orders
                 </a>
                 </li>
 
                 <li>
-                    <a href="address.php" class="nav-link link-dark">
+                    <a href="/address" class="nav-link link-dark">
 
-                        <img class="mx-1" src="images/address.svg">
+                        <img class="mx-1" src={{asset('img/website/address.svg')}}>
 
                         Address
                     </a>
                 </li>
                 <li>
-                    <a href="payment.php" class="nav-link link-dark">
+                    <a href="/payment" class="nav-link link-dark">
 
-                        <img class="mx-1" src="images/payment.svg">
+                        <img class="mx-1" src={{asset('img/website/payment.svg')}}>
                         Payment
                     </a>
                 </li>

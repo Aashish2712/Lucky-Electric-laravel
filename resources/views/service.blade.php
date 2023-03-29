@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="hero-img-wrap">
-                        <img src="images/couch.png" class="img-fluid">
+                        <img src="images/couch.p" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                 <div class="col-6 col-md-6 col-lg-3 mb-4">
                     <div class="feature">
                         <div class="icon">
-                            <img src="images/truck.svg" alt="Image" class="imf-fluid">
+                            <img src={{asset('img/website/truck.svg')}}  alt="Image" class="imf-fluid">
                         </div>
                         <h3>Fast &amp; Free Shipping</h3>
                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
@@ -53,7 +53,7 @@
                 <div class="col-6 col-md-6 col-lg-3 mb-4">
                     <div class="feature">
                         <div class="icon">
-                            <img src="images/bag.svg" alt="Image" class="imf-fluid">
+                            <img src={{asset('img/website/bag.svg')}} alt="Image" class="imf-fluid">
                         </div>
                         <h3>Easy to Shop</h3>
                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
@@ -63,7 +63,7 @@
                 <div class="col-6 col-md-6 col-lg-3 mb-4">
                     <div class="feature">
                         <div class="icon">
-                            <img src="images/support.svg" alt="Image" class="imf-fluid">
+                            <img src={{asset('img/website/support.svg')}} alt="Image" class="imf-fluid">
                         </div>
                         <h3>24/7 Support</h3>
                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
@@ -73,27 +73,29 @@
                 <div class="col-6 col-md-6 col-lg-3 mb-4">
                     <div class="feature">
                         <div class="icon">
-                            <img src="images/return.svg" alt="Image" class="imf-fluid">
+                            <img src={{asset('img/website/return.svg')}} alt="Image" class="imf-fluid">
                         </div>
                         <h3>Hassle Free Returns</h3>
                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-6 col-lg-3 mb-4">
-                    <div class="feature">
-                        <div class="icon">
-                            <img src="images/truck.svg" alt="Image" class="imf-fluid">
+
+                <div class="row my-5">
+                    <div class="col-6 col-md-6 col-lg-3 mb-4">
+                        <div class="feature">
+                            <div class="icon">
+                                <img src={{asset('img/website/truck.svg')}}  alt="Image" class="imf-fluid">
+                            </div>
+                            <h3>Fast &amp; Free Shipping</h3>
+                            <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
                         </div>
-                        <h3>Fast &amp; Free Shipping</h3>
-                        <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
                     </div>
-                </div>
 
                 <div class="col-6 col-md-6 col-lg-3 mb-4">
                     <div class="feature">
                         <div class="icon">
-                            <img src="images/bag.svg" alt="Image" class="imf-fluid">
+                            <img src={{asset('img/website/bag.svg')}} alt="Image" class="imf-fluid">
                         </div>
                         <h3>Easy to Shop</h3>
                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
@@ -103,7 +105,7 @@
                 <div class="col-6 col-md-6 col-lg-3 mb-4">
                     <div class="feature">
                         <div class="icon">
-                            <img src="images/support.svg" alt="Image" class="imf-fluid">
+                            <img src={{asset('img/website/support.svg')}} alt="Image" class="imf-fluid">
                         </div>
                         <h3>24/7 Support</h3>
                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
@@ -113,7 +115,7 @@
                 <div class="col-6 col-md-6 col-lg-3 mb-4">
                     <div class="feature">
                         <div class="icon">
-                            <img src="images/return.svg" alt="Image" class="imf-fluid">
+                            <img src={{asset('img/website/return.svg')}} alt="Image" class="imf-fluid">
                         </div>
                         <h3>Hassle Free Returns</h3>
                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>

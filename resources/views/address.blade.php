@@ -1,7 +1,7 @@
 
 @extends('layouts.profile_temp')
-@push('page')
-    Product
+@push('menu')
+    active
 @endpush
 @section('content-section')
 

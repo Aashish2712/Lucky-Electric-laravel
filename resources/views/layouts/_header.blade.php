@@ -57,7 +57,7 @@
   
         <li class="nav-item dropdown">
           <a class="nav-link navcontents"> 
-            <img class="" src="{{asset('img/user.svg')}}">
+            <img class="" src="{{asset("img/website/user.svg")}}">
            </a>  
            <div class="dropdown-content">
              <a  href="" ><img src="{{asset('img/newcustmer.svg')}}" alt="">&nbsp; New Customer?   Singup   </a>
@@ -67,14 +67,14 @@
              <a href="#"><img src="{{asset('img/login.svg')}}" alt=""> &nbsp;&nbsp;Existing User Login</a>
              <button type="button"class="btn btn-warning btn-inf me-2 px-4 d-inline"data-bs-toggle="modal" data-bs-target="#loginmodal">login</button>
              <hr>
-             <a href="/profile"> <img class="" src="{{asset('img/profile.svg')}}"> Profile</a>
+             <a href="/profile"> <img class="" src="{{asset('img/website/profile.svg')}}"> Profile</a>
              <hr>
-             <a href="/order"> <img class="" src="{{asset('img/order.svg')}}"> Order</a>
+             <a href="/order"> <img class="" src="{{asset('img/website/order.svg')}}"> Order</a>
              <hr>
         </li>
         
         
-        <li><a class="nav-link navcontents" href="/cart"><img src="{{asset('img/cart.svg')}}"></a></li>
+        <li><a class="nav-link navcontents" href="/cart"><img src="{{asset('img/website/cart.svg')}}"></a></li>
         
       </ul>
       <form class="form-inline my-2 my-lg-0 " action="products.php">

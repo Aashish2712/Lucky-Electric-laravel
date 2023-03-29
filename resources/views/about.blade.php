@@ -48,7 +48,7 @@
                         <div class="col-6 col-md-6">
                             <div class="feature">
                                 <div class="icon">
-                                    <img src="images/truck.svg" alt="Image" class="imf-fluid">
+                                    <img src={{asset('img/website/truck.svg')}} alt="Image" class="imf-fluid">
                                 </div>
                                 <h3>Fast &amp; Free Shipping</h3>
                                 <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
@@ -59,7 +59,7 @@
                         <div class="col-6 col-md-6">
                             <div class="feature">
                                 <div class="icon">
-                                    <img src="images/bag.svg" alt="Image" class="imf-fluid">
+                                    <img src={{asset('img/website/bag.svg')}} alt="Image" class="imf-fluid">
                                 </div>
                                 <h3>Easy to Shop</h3>
                                 <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
@@ -70,7 +70,7 @@
                         <div class="col-6 col-md-6">
                             <div class="feature">
                                 <div class="icon">
-                                    <img src="images/support.svg" alt="Image" class="imf-fluid">
+                                    <img src={{asset('img/website/support.svg')}} alt="Image" class="imf-fluid">
                                 </div>
                                 <h3>24/7 Support</h3>
                                 <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
@@ -81,7 +81,7 @@
                         <div class="col-6 col-md-6">
                             <div class="feature">
                                 <div class="icon">
-                                    <img src="images/return.svg" alt="Image" class="imf-fluid">
+                                    <img src={{asset('img/website/return.svg')}} alt="Image" class="imf-fluid">
                                 </div>
                                 <h3>Hassle Free Returns</h3>
                                 <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam

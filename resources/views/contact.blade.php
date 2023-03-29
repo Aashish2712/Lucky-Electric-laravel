@@ -1,6 +1,6 @@
   
    @extends('layouts._main')
-   @push('page')
+   @push('menu')
        Product
    @endpush
    @section('main-section')

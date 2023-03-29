@@ -64,7 +64,7 @@
 
         <div class="col-lg-3 col-sm-6 mb-2">
             <a class="text-decoration-none" href="">
-                <img class="mb-3 ms-n3 mt-3" src="{{asset('img/Goldmedal-Logo.png')}}" width="200" alt="Feature" />
+                <img class="mb-3 ms-n3 mt-3" src="{{asset('img/website/Goldmedal-Logo.png')}}" width="200" alt="Feature" />
                 <h4 class="mb-3 text-dark">Switch wire fan</h4>
                 <p class="mb-0 fw-medium text-secondary">While most people enjoy casino gambling,</p>
             </a>
@@ -74,7 +74,7 @@
 
         <div class="col-lg-3 col-sm-6 mb-2">
             <a class="text-decoration-none" href="">
-                <img class="mb-3 ms-n3" src="{{asset('img/ashirvadlogo.svg')}}" width="200" alt="Feature" />
+                <img class="mb-3 ms-n3" src="{{asset('img/website/ashirvadlogo.svg')}}" width="200" alt="Feature" />
                 <h4 class="mb-3 text-dark">Design surveys</h4>
                 <p class="mb-0 fw-medium text-secondary">Sports betting,lottery and bingo playing for the fun</p>
             </a>
@@ -83,7 +83,7 @@
 
         <div class="col-lg-3 col-sm-6 mb-2">
             <a class="text-decoration-none" href="">
-                <img class="mb-3 ms-n3" src="{{asset('img/texmologo.png')}}" width="200" alt="Feature" />
+                <img class="mb-3 ms-n3" src="{{asset('img/website/texmologo.png')}}" width="200" alt="Feature" />
                 <h4 class="mb-3 text-dark">Preference tests</h4>
                 <p class="mb-0 fw-medium text-secondary">The Myspace page defines the individual.</p>
             </a>
@@ -92,7 +92,7 @@
 
         <div class="col-lg-3 col-sm-6 mb-2">
             <a class="text-decoration-none" href="">
-                <img class="mb-3 ms-n3" src="{{asset('img/lglogo.png')}}" width="200" alt="Feature" />
+                <img class="mb-3 ms-n3" src="{{asset('img/website/lglogo.png')}}" width="200" alt="Feature" />
                 <h4 class="mb-3 text-dark">Five second tests</h4>
                 <p class="mb-0 fw-medium text-secondary">Personal choices and the overall personality of the person.
                 </p>
