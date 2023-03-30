@@ -84,12 +84,13 @@
                             </div>
                         </div>
 
-                        <form>
+                        <form action="{{ url('/') }}/contact" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label class="text-black" for="fname">First name</label>
-                                        <input type="text" class="form-control" id="fname">
+                                        <input type="text" name="" class="form-control" id="fname">
                                     </div>
                                 </div>
                                 <div class="col-6">

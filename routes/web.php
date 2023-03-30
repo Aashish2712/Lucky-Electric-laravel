@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Category;
+use App\Http\Controllers\Signupcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +47,10 @@ Route::get('/address', function () {
 Route::get('/payment', function () {
     return view('pay');
 });
+Route::post('/Register', [Signupcontroller::class, 'Signup']);
+
+// Route::get('/demo', function () {
+//     $cate = Category::all();
+//     echo '<pre>';
+//     print_r($cate->toArray());
+// });

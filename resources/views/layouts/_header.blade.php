@@ -61,11 +61,11 @@
            </a>  
            <div class="dropdown-content">
              <a  href="" ><img src="{{asset('img/newcustmer.svg')}}" alt="">&nbsp; New Customer?   Singup   </a>
-             <button type="button" class="btn btn-warning btn-inf  me-2 px-4 d-inline"data-bs-toggle="modal"
-             data-bs-target="#signupmodal">signup</button> 
+             {{-- <button type="button" class="btn btn-warning btn-inf  me-2 px-4 d-inline"data-bs-toggle="modal"
+             data-bs-target="#signupmodal">signup</button>  --}}
              <hr>
              <a href="#"><img src="{{asset('img/login.svg')}}" alt=""> &nbsp;&nbsp;Existing User Login</a>
-             <button type="button"class="btn btn-warning btn-inf me-2 px-4 d-inline"data-bs-toggle="modal" data-bs-target="#loginmodal">login</button>
+             {{-- <button type="button"class="btn btn-warning btn-inf me-2 px-4 d-inline"data-bs-toggle="modal" data-bs-target="#loginmodal">login</button> --}}
              <hr>
              <a href="/profile"> <img class="" src="{{asset('img/website/profile.svg')}}"> Profile</a>
              <hr>
@@ -85,10 +85,8 @@
     </div>
   </div>
   </nav>
-  
-  
-@php
-    
-  @include "singup.php";
-  @include "login.php";
-@endphp
+{{-- @include('layouts._login_modal')
+@include('layouts._signup_modal') --}}
+
+
+
