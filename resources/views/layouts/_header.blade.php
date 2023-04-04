@@ -60,11 +60,11 @@
             <img class="" src="{{asset("img/website/user.svg")}}">
            </a>  
            <div class="dropdown-content">
-             <a  href="" ><img src="{{asset('img/newcustmer.svg')}}" alt="">&nbsp; New Customer?   Singup   </a>
+             <a  href="{{url('/register')}}" ><img src="{{asset('img/newcustmer.svg')}}" alt=""><span class="mr-4 pr-2">  New Customer ?  </span>   <Button class="Subtn"> Sign Up</Button>  </a>
              {{-- <button type="button" class="btn btn-warning btn-inf  me-2 px-4 d-inline"data-bs-toggle="modal"
              data-bs-target="#signupmodal">signup</button>  --}}
              <hr>
-             <a href="#"><img src="{{asset('img/login.svg')}}" alt=""> &nbsp;&nbsp;Existing User Login</a>
+             <a href="{{url('/login')}}"><img src="{{asset('img/login.svg')}}" alt=""><span class="mr-4"> Existing Customer </span>   <Button class="Subtn"> Login </Button></a>
              {{-- <button type="button"class="btn btn-warning btn-inf me-2 px-4 d-inline"data-bs-toggle="modal" data-bs-target="#loginmodal">login</button> --}}
              <hr>
              <a href="/profile"> <img class="" src="{{asset('img/website/profile.svg')}}"> Profile</a>
@@ -79,7 +79,7 @@
       </ul>
       <form class="form-inline my-2 my-lg-0 " action="products.php">
         <input class="form-control mr-sm-2 navform  mx-2 my-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-warning mr-2" type="submit">Search</button>
+        <button class="btn btn-warning hv mr-2" type="submit">Search</button>
       </form>
       <!-- <button type="button" class="btn btn-outline-warning"></button> -->
     </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Logincontroller;
 use Illuminate\Support\Facades\Route;
 use App\Models\Category;
 use App\Http\Controllers\Signupcontroller;
@@ -18,36 +19,42 @@ use App\Http\Controllers\Signupcontroller;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/product', function () {
+Route::get('product', function () {
     return view('product');
 });
-Route::get('/service', function () {
+Route::get('service', function () {
     return view('service');
 });
 
-Route::get('/about', function () {
+Route::get('about', function () {
     return view('about');
 });
 
-Route::get('/contact', function () {
+Route::get('contact', function () {
     return view('contact');
 });
-Route::get('/cart', function () {
+Route::get('cart', function () {
     return view('cart');
 });
-Route::get('/profile', function () {
+Route::get('profile', function () {
     return view('profile');
 });
-Route::get('/order', function () {
+Route::get('order', function () {
     return view('order');
 });
-Route::get('/address', function () {
+Route::get('address', function () {
     return view('address');
 });
-Route::get('/payment', function () {
+Route::get('payment', function () {
     return view('pay');
 });
-Route::post('/Register', [Signupcontroller::class, 'Signup']);
+
+Route::get('register', [Signupcontroller::class, 'Signup']);
+Route::post('register', [Signupcontroller::class, 'Create']);
+Route::get('login', [Signupcontroller::class, 'Showlogin']);
+Route::post('login', [Signupcontroller::class, 'userlogin']);
+
+
 
 // Route::get('/demo', function () {
 //     $cate = Category::all();

@@ -7,6 +7,26 @@ body {
     font-weight: 600;
     font-size: 25px;
 }
+.multicolor-head {
+    text-align: center;
+    font-size: 50px;
+    background: linear-gradient(
+        /* to left,
+        violet,
+        indigo,
+        blue,
+        green,
+        yellow,
+         orange,
+        red */
+            to right,
+        #00b4db,
+        #0083b0,
+        #00678e
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+}
 /* 
   .dropdown {
     position: relative;
@@ -22,7 +42,7 @@ body {
     display: none;
     position: absolute;
     background-color: rgb(241, 243, 241);
-    min-width: 400px;
+    min-width: 300px;
     min-height: 250px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 5;
@@ -34,7 +54,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-weight: 600;
-    width: 260px;
+    width: 290px;
     height: 10px;
     cursor: none;
 }
@@ -50,8 +70,18 @@ body {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
-
-.btn:hover {
+.Subtn {
+    border-radius: 5px;
+    background-color: #ffc107;
+    color: black;
+    border: 0.1px solid black;
+    padding: 8px 10px;
+    width: 80px;
+}
+.Subtn:hover {
+    background-color: rgb(246, 164, 1);
+}
+.hv:hover {
     color: #ffc107;
     background-color: #3b5d50;
     cursor: pointer;
