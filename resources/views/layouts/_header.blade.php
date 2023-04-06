@@ -60,13 +60,24 @@
             <img class="" src="{{asset("img/website/user.svg")}}">
            </a>  
            <div class="dropdown-content">
-             <a  href="{{url('/register')}}" ><img src="{{asset('img/newcustmer.svg')}}" alt=""><span class="mr-4 pr-2">  New Customer ?  </span>   <Button class="Subtn"> Sign Up</Button>  </a>
-             {{-- <button type="button" class="btn btn-warning btn-inf  me-2 px-4 d-inline"data-bs-toggle="modal"
-             data-bs-target="#signupmodal">signup</button>  --}}
-             <hr>
-             <a href="{{url('/login')}}"><img src="{{asset('img/login.svg')}}" alt=""><span class="mr-4"> Existing Customer </span>   <Button class="Subtn"> Login </Button></a>
-             {{-- <button type="button"class="btn btn-warning btn-inf me-2 px-4 d-inline"data-bs-toggle="modal" data-bs-target="#loginmodal">login</button> --}}
-             <hr>
+            @if(session()->has('User_name'))
+           
+            
+            <a href="{{url('/logout')}} " > <img src= {{ asset('img/website/login.svg' )}} alt=""><span class="mr-4"> Logout </span>   <Button class="Subtn"> Logout </Button></a>
+            <hr>
+             @else
+             
+
+            <a  href="{{url("/register")}}" ><img src="{{asset("img/website/newcustmer.svg")}}" alt=""><span class="mr-2 pr-2">  New Customer ?  </span>   <Button class="Subtn"> Sign Up</Button>  </a>
+            
+            <hr>
+           <a href="{{url('/login')}} " > <img src= {{ asset('img/website/login.svg' )}} alt=""><span class="mr-1"> Existing Customer</span> <Button class="Subtn"> Login </Button></a>
+
+           <hr>
+             @endif
+           
+
+
              <a href="/profile"> <img class="" src="{{asset('img/website/profile.svg')}}"> Profile</a>
              <hr>
              <a href="/order"> <img class="" src="{{asset('img/website/order.svg')}}"> Order</a>
@@ -76,6 +87,14 @@
         
         <li><a class="nav-link navcontents" href="/cart"><img src="{{asset('img/website/cart.svg')}}"></a></li>
         
+        @if(session()->has('User_name'))
+        @if(session('User_email') == "aashu27122001@gmail.com")
+        <li class="nav-item">
+          <a class="nav-link navcontents" href="/admin">Admin</a>
+        </li>
+
+        @endif
+        @endif
       </ul>
       <form class="form-inline my-2 my-lg-0 " action="products.php">
         <input class="form-control mr-sm-2 navform  mx-2 my-2" type="search" placeholder="Search" aria-label="Search">

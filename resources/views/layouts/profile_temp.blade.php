@@ -4,6 +4,7 @@
 @endpush
 @section('main-section')
 
+
 <div class="container rounded bg-white my-3 mx-auto">
     <div class="row">
         <div class="col-md-3 ">
@@ -17,7 +18,7 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="profile.php" class="nav-link  @stack('menu') " aria-current="page">
+                    <a href="/profile" class="nav-link  @stack('menu') " aria-current="page">
 
                         <img class="mx-1" src={{asset('img/website/profile.svg')}}>
                         My profile

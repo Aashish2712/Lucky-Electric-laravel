@@ -4,6 +4,8 @@ use App\Http\Controllers\Logincontroller;
 use Illuminate\Support\Facades\Route;
 use App\Models\Category;
 use App\Http\Controllers\Signupcontroller;
+use App\Http\Controllers\Admincontroller;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +54,12 @@ Route::get('payment', function () {
 Route::get('register', [Signupcontroller::class, 'Signup']);
 Route::post('register', [Signupcontroller::class, 'Create']);
 Route::get('login', [Signupcontroller::class, 'Showlogin']);
+Route::get('verify', [Signupcontroller::class, 'Showverify']);
 Route::post('login', [Signupcontroller::class, 'userlogin']);
+Route::post('verify', [Signupcontroller::class, 'enroll_user']);
+Route::get('logout', [Signupcontroller::class, 'logout']);
+Route::get('admin', [Admincontroller::class, 'index']);
+
 
 
 
