@@ -5,17 +5,17 @@
 @section('form-section')
     <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
 
-        <form action="{{ url('/') }}/verify" method="POST">
+        <form action="{{ url('/') }}/update_pass" method="POST">
             @csrf
 
 
             <div class="form-outline mb-4">
-                <label class="form-label" for="lg-email">Email address</label>
-                <input type="text" id="otp" name="otp" class="form-control form-control-lg"
-                    placeholder="Enter OTP received on your email address" />
+                <label class="form-label" for="lg-email">New Password</label>
+                <input type="password" id="otp" name="password" class="form-control form-control-lg"
+                    placeholder="Set your new password" />
 
                 <span class="text-danger">
-                    @error('otp')
+                    @error('password')
                         {{ $message }}
                     @enderror
                 </span>

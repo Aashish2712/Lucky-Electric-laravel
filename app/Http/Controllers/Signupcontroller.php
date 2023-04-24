@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\User;
 // use Illuminate\Support\Str;
@@ -16,6 +17,11 @@ class Signupcontroller extends Controller
 
     public function Signup()
     {
+        if (session()->has('User_name') && session()->has('User_email')) {
+
+            return redirect('/');
+        }
+
         return view('layouts._signup');
     }
 
@@ -68,7 +74,13 @@ class Signupcontroller extends Controller
 
     public function Showverify()
     {
-        return view('layouts._otpverification');
+        if (session()->has('veri_code')) {
+
+            return view('layouts._otpverification');
+        } else {
+
+            return view('layouts._signup');
+        }
     }
 
 
@@ -82,14 +94,21 @@ class Signupcontroller extends Controller
             ]
         );
         if (session('veri_code') == $request['otp']) {
+            if (session()->has('name')) {
 
-            $udata = new User;
-            $udata->name = session('name');
-            $udata->email = session('email');
-            $udata->password = session('password');
-            $udata->save();
-            $request->session()->flush();
-            return redirect('login');
+
+                $udata = new User;
+                $udata->name = session('name');
+                $udata->email = session('email');
+                $udata->password = session('password');
+                $udata->save();
+                $request->session()->flush();
+                return redirect('login');
+            } else {
+                $confirm = true;
+                session(['confirm' => $confirm]);
+                return redirect('/pass_update');
+            }
         } else {
             return redirect('/verify')
                 ->withErrors(['otp' => 'The OTP you entered do not match']);
@@ -99,6 +118,10 @@ class Signupcontroller extends Controller
 
     public function Showlogin()
     {
+        if (session()->has('User_name') && session()->has('User_email')) {
+
+            return redirect('/');
+        }
         return view('layouts._login');
     }
 
@@ -116,6 +139,7 @@ class Signupcontroller extends Controller
         $email = $request->input('email');
         $pass = $request->input('password');
         $userd = User::where('email', $email)->first();
+
         if (empty($userd)) {
             return redirect('/login')
                 ->withErrors(['email' => 'The User not Found please Register your email '])
@@ -128,16 +152,95 @@ class Signupcontroller extends Controller
                 session(['User_name' => $userd['name']]);
                 session(['User_email' => $userd['email']]);
                 session(['User_id' => $userd['id']]);
-                return view('index');
+                if ($userd['admin']) {
+                    session(['Admin' => true]);
+                }
+
+                return redirect('/');
             } else {
                 return redirect('/login')
                     ->withErrors(['password' => 'The Password do not match']);
             }
         }
     }
+
+
+
     public function logout(Request $request)
     {
         $request->session()->flush();
-        return view('index');
+        return redirect('/');
+    }
+    public function resend()
+    {
+        if (session()->has('email')) {
+
+            $veri_code = strval(mt_rand(100000, 999999));
+            session(['veri_code' => $veri_code]);
+            // session(['useremail' => $userd['email']]);
+            $details = [
+                'email'  => session('email'),
+                'code'   => $veri_code,
+            ];
+            Mail::to(session('email'))->send(new Invoices($details));
+            return redirect('/verify');
+        } else {
+            return view('layouts._signup');
+        }
+    }
+    public function forgot()
+    {
+        if (session()->has('User_name') && session()->has('User_email')) {
+
+            return redirect('/');
+        } else {
+            return view('layouts._forgot');
+        }
+    }
+    public function reset(Request $request)
+    {
+        $validated = $request->validate(
+            [
+                'email' => 'email|required|exists:users,email',
+            ],
+            [
+                'email.exists' => 'This email address is not Registered .',
+            ]
+        );
+        session(['email' => $request['email']]);
+        return redirect('/resend');
+    }
+    public function update_pass()
+    {
+        // dd(session('confirm'));
+        if (session()->has('confirm') && session('confirm') == true) {
+            return view('layouts._pass_update');
+        } else {
+            return view('index');
+        }
+    }
+    public function change_pass(Request $request)
+    {
+        $validated = $request->validate(
+            [
+                'password' => [
+                    'required',
+                    'min:8',
+
+                    'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'
+                ],
+            ]
+        );
+        $results = DB::table('users')
+            ->where('email', session('email'))
+            ->get();
+        $id = $results->first()->id;
+        // $use=User::find
+
+        $udata =  User::find($id);
+        $udata->password = password_hash($request['password'], PASSWORD_DEFAULT);
+        $udata->save();
+        $request->session()->flush();
+        return redirect('/login');
     }
 }

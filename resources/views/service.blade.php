@@ -1,4 +1,4 @@
-  
+{{--   
    @extends('layouts._main')
    @push('page')
        Product
@@ -132,4 +132,4 @@
 
 
 
-  @endsection
+  @endsection --}}

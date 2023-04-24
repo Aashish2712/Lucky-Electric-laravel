@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category', function (Blueprint $table) {
-            $table->id('cat_id');
-            $table->string('cat_name', 50);
-            $table->text('cat_desc');
-            $table->boolean('cat_status')->default(1);
+        Schema::create('address', function (Blueprint $table) {
+            $table->id('a_id');
+            $table->json('u_address');
+            $table->unsignedBigInteger('u_id');
+            $table->foreign('u_id')->references('id')->on('users');
+
             $table->timestamps();
-            
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category_tbl');
+        Schema::dropIfExists('address');
     }
 };

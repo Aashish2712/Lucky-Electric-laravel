@@ -1,45 +1,38 @@
-
 @extends('layouts.profile_temp')
 @push('menu')
     active
 @endpush
+
 @section('content-section')
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="text-right">Profile Settings</h4>
-</div>
-<div class="row mt-2">
-    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control"
-            placeholder="first name" value=""></div>
-    <div class="col-md-6"><label class="labels">Surname</label><input type="text"
-            class="form-control" value="" placeholder="surname"></div>
-</div>
-<div class="row mt-3">
-    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text"
-            class="form-control" placeholder="enter phone number" value=""></div>
-    <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text"
-            class="form-control" placeholder="enter address line 1" value=""></div>
-    <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text"
-            class="form-control" placeholder="enter address line 2" value=""></div>
-    <div class="col-md-12"><label class="labels">Postcode</label><input type="text"
-            class="form-control" placeholder="enter address line 2" value=""></div>
-    <div class="col-md-12"><label class="labels">State</label><input type="text"
-            class="form-control" placeholder="enter address line 2" value=""></div>
-    <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control"
-            placeholder="enter address line 2" value=""></div>
-    <div class="col-md-12"><label class="labels">Email ID</label><input type="text"
-            class="form-control" placeholder="enter email id" value=""></div>
-    <div class="col-md-12"><label class="labels">Education</label><input type="text"
-            class="form-control" placeholder="education" value=""></div>
-</div>
-<div class="row mt-3">
-    <div class="col-md-6"><label class="labels">Country</label><input type="text"
-            class="form-control" placeholder="country" value=""></div>
-    <div class="col-md-6"><label class="labels">State/Region</label><input type="text"
-            class="form-control" value="" placeholder="state"></div>
-</div>
-<div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save
-        Profile</button></div>
+    <div class="container border bg-white my-3 p-5">
+
+        <h1 class="mx-3 mb-3">Profile</h1>
+        <form>
+            <fieldset disabled>
+                <div class="form-group">
+                    <label for="disabledTextInput">Name </label>
+                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input"
+                        value="{{ session('User_name') }}">
+                </div>
+                <div class="form-group">
+                    <label for="disabledTextInput">Email </label>
+                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input"
+                        value="{{ session('User_email') }}">
+                </div>
+                {{-- <div class="form-group">
+                    <label for="disabledSelect">Disabled select menu</label>
+                    <select id="disabledSelect" class="form-control">
+                        <option>Disabled select</option>
+                    </select>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+                    <label class="form-check-label" for="disabledFieldsetCheck">
+                        Can't check this
+                    </label>
+                </div> --}}
+                <button type="submit" class="btn btn-primary center">Submit</button>
+            </fieldset>
+        </form>
+    </div>
 @endsection
-
-
-

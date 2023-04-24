@@ -30,7 +30,7 @@ class MemberCredentials extends Mailable
      */
     public function build()
     {
-        return $this->subject('SMS Member Credentials')
-            ->view('emails.member_credentials')->with("details", $this->details);
+        return $this->subject('Contact us ')
+            ->view('emails.contactmail')->with("details", $this->details);
     }
 }

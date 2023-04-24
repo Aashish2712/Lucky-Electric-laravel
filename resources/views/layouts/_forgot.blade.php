@@ -4,7 +4,7 @@
 @extends('layouts._registration')
 @section('form-section')
     <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form action="{{ url('/') }}/login" method="POST">
+        <form action="{{ url('/') }}/reset" method="POST">
             @csrf
 
 
@@ -15,20 +15,6 @@
 
                 <span class="text-danger">
                     @error('email')
-                        {{ $message }}
-                    @enderror
-                </span>
-            </div>
-            <!-- Password input -->
-            <div class="form-outline mb-3">
-                <label class="form-label" for="password">Password</label>
-                <input type="password" id="password" name="password" class="form-control form-control-lg"
-                    placeholder="Enter your password" />
-                <p class="small fw-bold mt-2 pt-1 mb-0"><a href="{{ url('/forgot') }}" class="link-danger"> Forgot
-                        password</a></p>
-
-                <span class="text-danger">
-                    @error('password')
                         {{ $message }}
                     @enderror
                 </span>

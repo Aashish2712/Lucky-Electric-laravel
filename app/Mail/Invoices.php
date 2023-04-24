@@ -30,7 +30,7 @@ class Invoices extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->details['name'])
+        return $this->subject("User Verification")
             ->view('emails.invoices')->with("details", $this->details);
     }
 }
