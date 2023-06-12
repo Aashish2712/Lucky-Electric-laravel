@@ -143,6 +143,7 @@
                                 <th scope="col">S.no</th>
                                 <th scope="col">Category Name </th>
                                 <th scope="col">Category Description </th>
+                                <th scope="col">Category Status </th>
 
                             </tr>
                         </thead>
@@ -153,10 +154,19 @@
                                 $sno = 1;
                             @endphp
                             @foreach ($categories as $category)
-                                <tr class="table-info">
+                                <tr class="table-warning">
                                     <th scope="row">{{ $sno }}</th>
                                     <td>{{ $category->cat_name }}</td>
                                     <td class="text-success fw-bold">{{ $category->cat_desc }}</td>
+                                    @if ($category->cat_status == '1')
+                                        <td class="text-success fw-bold ">
+                                            Active
+                                        </td>
+                                    @else
+                                        <td class="text-danger fw-bold ">
+                                            Inactive
+                                        </td>
+                                    @endif
 
 
 
@@ -167,9 +177,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <table>
 
-                    </table>
                 </div>
             </div>
         </div>
@@ -410,13 +418,86 @@
         </div>
         <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
             <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                labore sustainable VHS.
+                <div class="card-body">
+                    <table class="table  table-bordered  ">
+                        <thead>
+                            <tr class="table-danger">
+                                <th scope="col">S.no</th>
+                                <th scope="col">Product Name </th>
+                                <th scope="col">Product Description </th>
+                                <th scope="col">Product Company </th>
+                                <th scope="col">Product Model </th>
+                                <th scope="col">Product Price </th>
+                                <th scope="col">Product Status </th>
+                                <th scope="col">Product Image </th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @php
+                                
+                                $sno = 1;
+                            @endphp
+                            @foreach ($products as $item)
+                                @php
+                                    
+                                    $desc = json_decode($item->p_desc, true);
+                                    $img = json_decode($item->p_img, true);
+                                @endphp
+                                <tr class="table-warning">
+                                    <th scope="row">{{ $sno }}</th>
+                                    <td class="text-success fw-bold">{{ $item->p_name }}</td>
+                                    <td class="text-success fw-bold">
+                                        @foreach ($desc as $key => $value)
+                                            <div class="container">
+
+
+                                                <table class="table-borderless custom-table-width">
+                                                    <tr class=" mx-2">
+                                                        <td class="col-md-4"><span
+                                                                class="p_specification">{{ $key }}:</span>
+                                                        </td>
+                                                        <td class="col-md-6">
+
+                                                            {{ $value }}
+
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        @endforeach
+                                    </td>
+
+                                    <td class="text-success fw-bold">{{ $item->p_company }}</td>
+                                    <td class="text-success fw-bold">{{ $item->p_model }}</td>
+                                    <td class="text-success fw-bold">{{ $item->p_price }}</td>
+                                    @if ($item->p_status == '1')
+                                        <td class="text-success fw-bold ">
+                                            Active
+                                        </td>
+                                    @else
+                                        <td class="text-danger fw-bold ">
+                                            Inactive
+                                        </td>
+                                    @endif
+
+                                    <td class="">
+
+                                        <img class="img-fluid product-thumbnail"
+                                            src="{{ asset('storage/images/' . basename($img['image1'])) }}"
+                                            id="main_product_image" width="350">
+
+                                    </td>
+                                </tr>
+                                @php
+                                    $sno++;
+                                @endphp
+                            @endforeach
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
         </div>
     </div>

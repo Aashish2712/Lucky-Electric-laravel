@@ -21,7 +21,12 @@ class Admincontroller extends Controller
                 ->select('order.od_id', 'order.amount', 'order.status', 'orderdesc.p_id', 'product.p_name')
                 ->where('order.u_id', '=', session('User_id'))
                 ->get();
-            $cate = compact('categories', 'orders');
+            $products = DB::table('product')
+                ->join('category', 'category.cat_id', '=', 'product.cat_id')
+                ->select('product.p_name', 'product.p_price', 'product.p_company', 'product.p_model', 'product.p_status', 'product.p_desc', 'product.p_img')
+                ->get();
+            // dd($products);
+            $cate = compact('categories', 'orders', 'products');
             return view('Admin')->with($cate);
         } else {
 

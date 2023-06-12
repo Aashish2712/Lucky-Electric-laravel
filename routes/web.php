@@ -56,7 +56,7 @@ Route::get('profile', function () {
     return view('profile');
 });
 Route::get('order', [Ordercontroller::class, 'index']);
-Route::get('cancel/{p_id}/{od_id}', [OrderController::class, 'cancel_order']);
+Route::get('cancel/{od_id}', [OrderController::class, 'cancel_order']);
 
 
 

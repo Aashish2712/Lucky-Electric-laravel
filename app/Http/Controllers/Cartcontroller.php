@@ -25,8 +25,10 @@ class Cartcontroller extends Controller
 
             $data = compact('results');
             return view('cart')->with($data);
+        } else {
+
+            return view('layouts._login');
         }
-        return view('layouts._login');
     }
 
     public function incre_q($id)
@@ -165,6 +167,12 @@ class Cartcontroller extends Controller
             $or_desc->t_price = $product->p_price * $product->quantity;
             $or_desc->save();
         }
+
+
+        DB::table('cart')->where('u_id', session('User_id'))->delete();
+
+
+
         return view('layouts._thanks');
 
 
